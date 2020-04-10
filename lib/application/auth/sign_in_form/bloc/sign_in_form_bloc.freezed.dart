@@ -11,7 +11,7 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChange(String passwordStr),
+    @required Result passwordChanged(String passwordStr),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
@@ -20,7 +20,7 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChange(String passwordStr),
+    Result passwordChanged(String passwordStr),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -30,7 +30,7 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
-    @required Result passwordChange(PasswordChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
         Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -43,7 +43,7 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
-    Result passwordChange(PasswordChanged value),
+    Result passwordChanged(PasswordChanged value),
     Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     Result signInWithEmailAndPasswordPressed(
@@ -62,7 +62,7 @@ class _$SignInFormEventTearOff {
     );
   }
 
-  PasswordChanged passwordChange(String passwordStr) {
+  PasswordChanged passwordChanged(String passwordStr) {
     return PasswordChanged(
       passwordStr,
     );
@@ -128,13 +128,13 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChange(String passwordStr),
+    @required Result passwordChanged(String passwordStr),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
@@ -145,7 +145,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChange(String passwordStr),
+    Result passwordChanged(String passwordStr),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -162,7 +162,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
-    @required Result passwordChange(PasswordChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
         Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -172,7 +172,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
     @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
@@ -183,7 +183,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
-    Result passwordChange(PasswordChanged value),
+    Result passwordChanged(PasswordChanged value),
     Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     Result signInWithEmailAndPasswordPressed(
@@ -217,14 +217,14 @@ class _$PasswordChanged
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignInFormEvent.passwordChange(passwordStr: $passwordStr)';
+    return 'SignInFormEvent.passwordChanged(passwordStr: $passwordStr)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.passwordChange'))
+      ..add(DiagnosticsProperty('type', 'SignInFormEvent.passwordChanged'))
       ..add(DiagnosticsProperty('passwordStr', passwordStr));
   }
 
@@ -254,32 +254,32 @@ class _$PasswordChanged
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChange(String passwordStr),
+    @required Result passwordChanged(String passwordStr),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
-    return passwordChange(passwordStr);
+    return passwordChanged(passwordStr);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChange(String passwordStr),
+    Result passwordChanged(String passwordStr),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (passwordChange != null) {
-      return passwordChange(passwordStr);
+    if (passwordChanged != null) {
+      return passwordChanged(passwordStr);
     }
     return orElse();
   }
@@ -288,7 +288,7 @@ class _$PasswordChanged
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
-    @required Result passwordChange(PasswordChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
         Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -298,18 +298,18 @@ class _$PasswordChanged
     @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
-    return passwordChange(this);
+    return passwordChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
-    Result passwordChange(PasswordChanged value),
+    Result passwordChanged(PasswordChanged value),
     Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     Result signInWithEmailAndPasswordPressed(
@@ -318,8 +318,8 @@ class _$PasswordChanged
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (passwordChange != null) {
-      return passwordChange(this);
+    if (passwordChanged != null) {
+      return passwordChanged(this);
     }
     return orElse();
   }
@@ -364,13 +364,13 @@ class _$RegisterWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChange(String passwordStr),
+    @required Result passwordChanged(String passwordStr),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
@@ -381,7 +381,7 @@ class _$RegisterWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChange(String passwordStr),
+    Result passwordChanged(String passwordStr),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -398,7 +398,7 @@ class _$RegisterWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
-    @required Result passwordChange(PasswordChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
         Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -408,7 +408,7 @@ class _$RegisterWithEmailAndPasswordPressed
     @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
@@ -419,7 +419,7 @@ class _$RegisterWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
-    Result passwordChange(PasswordChanged value),
+    Result passwordChanged(PasswordChanged value),
     Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     Result signInWithEmailAndPasswordPressed(
@@ -471,13 +471,13 @@ class _$SignInWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChange(String passwordStr),
+    @required Result passwordChanged(String passwordStr),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
@@ -488,7 +488,7 @@ class _$SignInWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChange(String passwordStr),
+    Result passwordChanged(String passwordStr),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -505,7 +505,7 @@ class _$SignInWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
-    @required Result passwordChange(PasswordChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
         Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -515,7 +515,7 @@ class _$SignInWithEmailAndPasswordPressed
     @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
@@ -526,7 +526,7 @@ class _$SignInWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
-    Result passwordChange(PasswordChanged value),
+    Result passwordChanged(PasswordChanged value),
     Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     Result signInWithEmailAndPasswordPressed(
@@ -577,13 +577,13 @@ class _$SignInWithGooglePressed
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChange(String passwordStr),
+    @required Result passwordChanged(String passwordStr),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
@@ -594,7 +594,7 @@ class _$SignInWithGooglePressed
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChange(String passwordStr),
+    Result passwordChanged(String passwordStr),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -611,7 +611,7 @@ class _$SignInWithGooglePressed
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result emailChanged(EmailChanged value),
-    @required Result passwordChange(PasswordChanged value),
+    @required Result passwordChanged(PasswordChanged value),
     @required
         Result registerWithEmailAndPasswordPressed(
             RegisterWithEmailAndPasswordPressed value),
@@ -621,7 +621,7 @@ class _$SignInWithGooglePressed
     @required Result signInWithGooglePressed(SignInWithGooglePressed value),
   }) {
     assert(emailChanged != null);
-    assert(passwordChange != null);
+    assert(passwordChanged != null);
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
@@ -632,7 +632,7 @@ class _$SignInWithGooglePressed
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result emailChanged(EmailChanged value),
-    Result passwordChange(PasswordChanged value),
+    Result passwordChanged(PasswordChanged value),
     Result registerWithEmailAndPasswordPressed(
         RegisterWithEmailAndPasswordPressed value),
     Result signInWithEmailAndPasswordPressed(
