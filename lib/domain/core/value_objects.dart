@@ -3,6 +3,8 @@ import 'package:firebasenotesddd/domain/core/failures.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'errors.dart';
+
 
 @immutable
 abstract class ValueObject<T> {
@@ -10,6 +12,12 @@ abstract class ValueObject<T> {
   Either<ValueFailure<T>, T> get value;
 
   bool isValid() => value.isRight();
+
+  /// Throws [UnexpectedValueError] containing the [ValueFailure]
+  T getOrCrash(){
+    // id = identity - same as writing (right) => right
+    value.fold((f) => throw UnexpectedValueError(f), id); 
+  }
 
   @override
   bool operator ==(Object o) {
