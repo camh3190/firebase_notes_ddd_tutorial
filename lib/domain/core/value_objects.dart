@@ -16,7 +16,7 @@ abstract class ValueObject<T> {
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
   T getOrCrash(){
     // id = identity - same as writing (right) => right
-    value.fold((f) => throw UnexpectedValueError(f), id); 
+    return value.fold((f) => throw UnexpectedValueError(f), id); 
   }
 
   @override
