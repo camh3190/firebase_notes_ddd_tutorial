@@ -5,7 +5,7 @@ import 'package:firebasenotesddd/domain/auth/value_objects.dart';
 import 'package:meta/meta.dart';
 
 abstract class IAuthFacade{
-  Future<Option<User>> getSignedInser();
+  Future<Option<User>> getSignedInUser();
 
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
     @required EmailAddress emailAddress,
