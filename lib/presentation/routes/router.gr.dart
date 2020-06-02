@@ -7,11 +7,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:firebasenotesddd/presentation/splash/splash_page.dart';
 import 'package:firebasenotesddd/presentation/sign_in/sign_in_page.dart';
 
 abstract class Routes {
+  static const splashPage = '/';
   static const signInPage = '/sign-in-page';
   static const all = {
+    splashPage,
     signInPage,
   };
 }
@@ -27,6 +30,11 @@ class Router extends RouterBase {
   @override
   Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case Routes.splashPage:
+        return MaterialPageRoute<dynamic>(
+          builder: (context) => SplashPage(),
+          settings: settings,
+        );
       case Routes.signInPage:
         return MaterialPageRoute<dynamic>(
           builder: (context) => SignInPage(),
@@ -43,5 +51,7 @@ class Router extends RouterBase {
 // **************************************************************************
 
 extension RouterNavigationHelperMethods on ExtendedNavigatorState {
+  Future pushSplashPage() => pushNamed(Routes.splashPage);
+
   Future pushSignInPage() => pushNamed(Routes.signInPage);
 }
