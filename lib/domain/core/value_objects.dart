@@ -6,7 +6,6 @@ import 'package:uuid/uuid.dart';
 
 import 'errors.dart';
 
-
 @immutable
 abstract class ValueObject<T> {
   const ValueObject();
@@ -14,10 +13,17 @@ abstract class ValueObject<T> {
 
   bool isValid() => value.isRight();
 
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (l) => left(l),
+      (r) => right(unit),
+    );
+  }
+
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
-  T getOrCrash(){
+  T getOrCrash() {
     // id = identity - same as writing (right) => right
-    return value.fold((f) => throw UnexpectedValueError(f), id); 
+    return value.fold((f) => throw UnexpectedValueError(f), id);
   }
 
   @override
@@ -34,17 +40,17 @@ abstract class ValueObject<T> {
   String toString() => 'Value($value)';
 }
 
-class UniqueId extends ValueObject<String>{
+class UniqueId extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory UniqueId(){
+  factory UniqueId() {
     return UniqueId._(
       right(Uuid().v1()),
     );
   }
 
-  factory UniqueId.fromUniqueString(String uniqueId){
+  factory UniqueId.fromUniqueString(String uniqueId) {
     assert(uniqueId != null);
     return UniqueId._(
       right(uniqueId),
