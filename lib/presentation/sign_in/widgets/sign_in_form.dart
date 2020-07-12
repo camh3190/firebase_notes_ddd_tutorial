@@ -1,4 +1,7 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:firebasenotesddd/application/auth/auth_bloc.dart';
 import 'package:firebasenotesddd/application/auth/sign_in_form/bloc/sign_in_form_bloc.dart';
+import 'package:firebasenotesddd/presentation/routes/router.gr.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +14,7 @@ class SignInForm extends StatelessWidget {
         state.authFailureOrSuccessOption.fold(
           () {},
           (either) => either.fold(
-            (failure) => {
+            (failure) {
               FlushbarHelper.createError(
                   message: failure.map(
                     cancelledByUser: (_) => 'Cancelled',
@@ -19,9 +22,13 @@ class SignInForm extends StatelessWidget {
                     emailAlreadyInUse: (_) => 'Email already in use',
                     invalidEmailAndPasswordCombination: (_) =>
                       'Invalid Email and Password combination',
-              ),).show(context)
+              ),).show(context);
             },
-            (r) => {},
+            (_) {
+              ExtendedNavigator.of(context)
+              .pushReplacementNamed(Routes.notesOverviewPage);
+              context.bloc<AuthBloc>().add(const AuthEvent.authCheckRequested());
+            },
           ),
         );
       },
